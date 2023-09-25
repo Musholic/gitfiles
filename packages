@@ -51,6 +51,8 @@ autorandr
 xorg-xclock
 xorg-xinit
 xorg-xprop
+xfce4-notifyd
+zathura-pdf-mupdf
 # For simple calculations
 galculator
 ## Terminal

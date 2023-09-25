@@ -2,6 +2,9 @@ if [ -r ~/.profile ]; then . ~/.profile; fi
 #Prevent some unwanted default directory when a new terminal open
 cd ~
 
+# Prevent Wine from adding menu entries and desktop links.
+export WINEDLLOVERRIDES="winemenubuilder.exe=d"
+
 eval $(ssh-agent)
 
 numlockx &
@@ -17,7 +20,6 @@ setxkbmap -option caps:escape
 pasystray &
 
 (sleep 1 && sxhkd -c .config/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc_bsp) &
-
 
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 

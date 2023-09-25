@@ -1,0 +1,32 @@
+! ===== ROFI ======
+
+rofi.combi-modi: window,run,ssh
+rofi.switchers: combi,run,window,ssh
+
+rofi.font: Terminus bold 10
+rofi.auto-select: trueautomagic
+
+rofi.terminal: termite
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+
+rofi.lines: 10
+rofi.columns: 2
+rofi.opacity: 90
+
+rofi.location:          6
+rofi.color-enabled:     true
+rofi.color-window:      #202020, #6fb3d2, #6fb3d2
+! State:               'bg',     'fg',    'bgalt', 'hlbg',  'hlfg'
+rofi.color-normal:      #000000, #e0e0e0, #000000, #6fb3d2, #ffffff
+rofi.color-urgent:      #000000, #fc6d24, #000000, #fc6d24, #ffffff
+rofi.color-active:      #000000, #a1c659, #000000, #a1c659, #ffffff
+rofi.separator-style:   dash
+rofi.fullscreen:        false
+rofi.padding:           0
+rofi.bw:           0
+rofi.hide-scrollbar:    true
+rofi.line-margin:       5
+rofi.fake-transparency: true
+rofi.yoffset:           0
+rofi.xoffset:           0
+rofi.width:             100

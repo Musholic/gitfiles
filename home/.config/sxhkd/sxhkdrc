@@ -1,0 +1,49 @@
+XF86Audio{Raise,Lower}Volume
+    amixer set Master 2%{+,-}
+
+XF86AudioMute
+    amixer set Master toggle
+
+# Screenshot - {root, rectangle}
+{_,alt + }Print
+    maim {_,-s }~/screenshots/$(date +%Y-%m-%d-%T)-screenshot.png
+
+# Screenshot - clipboard
+shift + Print
+    maim -s | xclip -selection clipboard -t image/png
+
+# Screenshot active window - clipboard
+super + Print
+    maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# Rofi - combi
+super + space
+    rofi -show combi
+
+# Rofi - run
+super + F2
+    rofi -show run
+
+# Rofi - ssh
+super + F3
+    rofi -show ssh
+
+# Rofi - window
+super + F4
+    rofi -show window
+
+# Roficlip
+super + shift + v
+    roficlip
+
+# Open terminal
+super + Return
+    $TERMINAL
+
+# make sxhkd reload its configuration files:
+super + Escape
+	~/.config/bspwm/bspwmrc; pkill -USR1 -x sxhkd
+
+# Open sxhkd help
+super + comma
+	~/bin/sxhkd-help
