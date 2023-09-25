@@ -36,6 +36,8 @@ mtools
 arch-install-scripts
 libisoburn
 archiso
+## For yay
+go
 # Dev
 git
 npm
@@ -61,6 +63,7 @@ galculator
 kitty
 ## For google-chrome
 ttf-liberation
+xdg-utils
 ## WM deps
 bspwm
 rofi
