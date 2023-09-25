@@ -39,6 +39,8 @@ archiso
 # Dev
 git
 npm
+docker
+docker-compose
 # Graphics
 ## For adwaita theme
 gnome-themes-extra
