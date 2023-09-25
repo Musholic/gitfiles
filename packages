@@ -12,3 +12,65 @@ pv
 qemu-guest-agent
 syslinux
 virtualbox-guest-utils
+## Config automation
+puppet
+## console utils
+ranger
+gvim
+tree
+ncdu
+zsh-completions
+htop
+iotop
+rsync
+man-db
+gparted
+terminus-font
+ttf-dejavu
+ack
+## Sound
+pulseaudio-alsa
+## For mkarchiso
+erofs-utils
+mtools
+arch-install-scripts
+libisoburn
+archiso
+# Dev
+git
+npm
+# Graphics
+## For adwaita theme
+gnome-themes-extra
+## Utils
+thunar-volman
+feh
+gimp
+pavucontrol
+autorandr
+xorg-xclock
+xorg-xinit
+xorg-xprop
+# For simple calculations
+galculator
+## Terminal
+kitty
+## For google-chrome
+ttf-liberation
+## WM deps
+bspwm
+rofi
+### For file download
+wget
+### For bspwm rules script
+xdo
+### For userlogs script to display timestamp
+moreutils
+### For extraction purposes
+unzip
+### For wifi (maybe more)
+linux-firmware
+### For screenshots
+maim
+
+

@@ -1,0 +1,7 @@
+*.swp
+*.rpm
+*.tar.xz
+*.tar.gz
+*.tar.zst
+*.deb
+PKGBUILDS/*/.git

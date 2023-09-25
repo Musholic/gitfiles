@@ -1,0 +1,28 @@
+if [ -r ~/.profile ]; then . ~/.profile; fi
+#Prevent some unwanted default directory when a new terminal open
+cd ~
+
+eval $(ssh-agent)
+
+numlockx &
+
+autorandr --change
+#xrandr --auto
+
+#remap verr num to escape key
+setxkbmap -option caps:escape
+
+#startup program
+
+pasystray &
+
+(sleep 1 && sxhkd -c .config/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc_bsp) &
+
+
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#disable dpms and screensaver
+xset -dpms
+xset s off
+
+srandrd autorandr --change
