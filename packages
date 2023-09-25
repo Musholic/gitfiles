@@ -43,6 +43,9 @@ git
 npm
 docker
 docker-compose
+# Custom package deps
+ntfs-3g
+asciidoc
 # Graphics
 ## For adwaita theme
 gnome-themes-extra
