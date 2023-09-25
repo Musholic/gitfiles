@@ -79,5 +79,7 @@ unzip
 linux-firmware
 ### For screenshots
 maim
+### For login
+lightdm
 
 
