@@ -1,0 +1,11 @@
+[Unit]
+Description=Custom setup on boot
+Wants=network-online.target
+After=network-online.target onBoot.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/rootScripts/onBoot-network.sh
+
+[Install]
+WantedBy=multi-user.target

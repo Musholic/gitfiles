@@ -1,0 +1,9 @@
+[Unit]
+Description=Custom setup on boot
+
+[Service]
+Type=oneshot
+ExecStart=/opt/rootScripts/onBoot.sh
+
+[Install]
+WantedBy=multi-user.target
