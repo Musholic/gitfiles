@@ -1,12 +1,12 @@
 node default {
   # Generated automatically >>>>
   $gitfiles_dir = "/mnt/disk/sys/gitfiles"
-  $home_files        = []
-  $home_dirs        = []
-  $root_files        = []
-  $root_dirs        = []
-  $packages    = []
-  $custom_packages = []
+  $home_files        = [ 'flashScripts', 'polybar-scripts', '.config/bspwm', '.config/polybar', '.config/sxhkd', '.p10k.zsh', '.profile', '.vim/colors/base16-bright.vim', '.vimrc', '.xprofile', '.Xresources', '.zshrc', ]
+  $home_dirs        = [ '.config', '.vim', '.vim/colors', ]
+  $root_files        = [ 'etc/locale.conf', 'etc/locale.gen', 'etc/sudoers', 'etc/systemd/system/onBoot-network.service', 'etc/systemd/system/onBoot.service', 'etc/vconsole.conf', 'etc/X11/xorg.conf.d/10-keyboard-layout.conf', 'opt/rootScripts', ]
+  $root_dirs        = [ 'etc/systemd', 'etc/systemd/system', 'etc/X11', 'etc/X11/xorg.conf.d', ]
+  $packages    = ['base','base-devel','cloud-init','hyperv','linux','mkinitcpio','mkinitcpio-archiso','open-vm-tools','openssh','pv','qemu-guest-agent','syslinux','virtualbox-guest-utils','puppet','ranger','gvim','tree','ncdu','zsh-completions','htop','iotop','rsync','man-db','gparted','terminus-font','ttf-dejavu','ack','pulseaudio-alsa','erofs-utils','mtools','arch-install-scripts','libisoburn','archiso','go','git','npm','docker','docker-compose','ntfs-3g','asciidoc','xf86-video-intel','gnome-themes-extra','thunar-volman','feh','gimp','pavucontrol','autorandr','xorg-xclock','xorg-xinit','xorg-xprop','xfce4-notifyd','zathura-pdf-mupdf','numlockx','pasystray','polybar','wmname','sxhkd','pacman-contrib','galculator','kitty','ttf-liberation','xdg-utils','bspwm','rofi','wget','xdo','moreutils','unzip','linux-firmware','maim','lightdm','lightdm-gtk-greeter',]
+  $custom_packages = ['gitflow-avh','google-chrome','jetbrains-toolbox','srandrd','yay',]
   # <<<<<<<
   filebucket { "main":
   }

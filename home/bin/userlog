@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/userlog"
+echo $2 | ts >> "$HOME/userlog/$1.log"
