@@ -1,6 +1,11 @@
 # Desactivate grml prompt if necessary
 type prompt > /dev/null 2>&1 && prompt off
 
+# Use zsh history on disk if available
+if [ -f "$DISK/user/appconfigs/.zsh_history" ]; then
+    HISTFILE="$DISK/user/appconfigs/.zsh_history"
+fi
+
 # Disable oh-my-zsh automatic update
 DISABLE_AUTO_UPDATE=true
 

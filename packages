@@ -63,7 +63,14 @@ xorg-xinit
 xorg-xprop
 xfce4-notifyd
 zathura-pdf-mupdf
-# For simple calculations
+numlockx
+pasystray
+polybar
+wmname
+sxhkd
+## For polybar scripting
+pacman-contrib
+## For simple calculations
 galculator
 ## Terminal
 kitty
