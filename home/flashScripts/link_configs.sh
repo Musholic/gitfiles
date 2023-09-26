@@ -10,6 +10,7 @@ link_config() {
         if [ -d ~/$dest ]; then
             mv -v ~/$dest $BACKUP
         fi
+        mkdir -p "$app"
         ln -sv $(readlink -f $app) ~/$dest
     fi
 }
