@@ -48,6 +48,8 @@ docker-compose
 ntfs-3g
 asciidoc
 # Graphics
+## Drivers
+xf86-video-intel
 ## For adwaita theme
 gnome-themes-extra
 ## Utils
