@@ -87,5 +87,6 @@ linux-firmware
 maim
 ### For login
 lightdm
+lightdm-gtk-greeter
 
 
