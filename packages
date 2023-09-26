@@ -68,6 +68,7 @@ pasystray
 polybar
 wmname
 sxhkd
+ttf-meslo-nerd
 ## For polybar scripting
 pacman-contrib
 ## For simple calculations
