@@ -28,3 +28,6 @@ xset -dpms
 xset s off
 
 srandrd autorandr --change
+
+# compositor
+picom &

@@ -18,7 +18,6 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     zgen oh-my-zsh plugins/archlinux
-    zgen oh-my-zsh plugins/autojump
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/docker

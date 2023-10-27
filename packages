@@ -61,6 +61,7 @@ autorandr
 xorg-xclock
 xorg-xinit
 xorg-xprop
+xorg-xkill
 xfce4-notifyd
 zathura-pdf-mupdf
 numlockx
@@ -69,6 +70,8 @@ polybar
 wmname
 sxhkd
 ttf-meslo-nerd
+## Compositor
+picom
 ## For polybar scripting
 pacman-contrib
 ## For simple calculations
