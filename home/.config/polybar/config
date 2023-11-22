@@ -136,7 +136,7 @@ format-prefix-foreground = ${color.yellow}
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = " %percentage:2%%"
+label = " %percentage:2%% (%percentage-sum:3%%)"
 
 ; Spacing between individual per-core ramps
 ;;ramp-coreload-spacing = 1
@@ -207,7 +207,7 @@ label-connected = "  %{F#6C77BB}%{F-}%downspeed:9% %{F#6C77BB}祝%{F-}%upspee
 
 [module/eth]
 type = internal/network
-interface = enp4s0
+interface = enp0s3
 interval = 1.0
 
 format-connected = <label-connected>

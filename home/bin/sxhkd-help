@@ -1,0 +1,6 @@
+#!/bin/bash
+
+awk '/^[a-zA-Z{]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/sxhkdrc{,_bsp} |
+    column -t -s $'\t' |
+    rofi -dmenu -i 
+    #rofi -dmenu -i -markup-rows -no-show-icons -width 1000 -lines 15 -yoffset 40

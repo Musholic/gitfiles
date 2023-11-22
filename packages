@@ -28,6 +28,7 @@ man-db
 gparted
 terminus-font
 ttf-dejavu
+noto-fonts-emoji
 ack
 ## Sound
 pulseaudio-alsa
@@ -37,6 +38,10 @@ mtools
 arch-install-scripts
 libisoburn
 archiso
+## Network and VPN
+networkmanager
+network-manager-applet
+networkmanager-openvpn
 ## For yay
 go
 # Dev
@@ -44,6 +49,14 @@ git
 npm
 docker
 docker-compose
+## 3D vulkan dev
+mesa-utils
+vulkan-headers
+vulkan-tools
+glslang
+zip
+vulkan-swrast
+vulkan-validation-layers
 # Custom package deps
 ntfs-3g
 asciidoc
@@ -56,6 +69,7 @@ gnome-themes-extra
 thunar-volman
 feh
 gimp
+xournalpp
 pavucontrol
 autorandr
 xorg-xclock
@@ -70,6 +84,8 @@ polybar
 wmname
 sxhkd
 ttf-meslo-nerd
+### To copy into the clipboard (like screenshots)
+xclip
 ## Compositor
 picom
 ## For polybar scripting

@@ -96,6 +96,7 @@ hash -d disk=$DISK
 hash -d appconfigs=$DISK/user/appconfigs
 hash -d softs=$DISK/user/softwares
 hash -d smd=$DISK/user/git/storemydocs
+hash -d plaxel=$DISK/user/git/plaxelss
 hash -d git=$DISK/user/git
 
 # Functions

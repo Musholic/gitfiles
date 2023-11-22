@@ -19,6 +19,8 @@ setxkbmap -option caps:escape
 
 pasystray &
 
+nm-applet &
+
 (sleep 1 && sxhkd -c .config/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc_bsp) &
 
 /usr/lib/xfce4/notifyd/xfce4-notifyd &

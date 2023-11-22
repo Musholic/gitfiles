@@ -89,6 +89,10 @@ gimp() {
     desktop=8
 }
 
+plaxel() {
+    state=floating
+}
+
 pavucontrol() {
     desktop=10
 }
@@ -118,6 +122,7 @@ case $instance.$class in
     jetbrains-idea*.jetbrains-idea*) jetbrains_idea ;;
     *.*jetbrains-toolbox*) jetbrains_idea ;;
     *.*jprofiler*) jprofiler ;;
+    *.Plaxel) plaxel ;;
     .)
         case $(exec ps -p "$(exec xdo pid "$id")" -o comm= 2>/dev/null) in
             spotify) spotify ;;
