@@ -46,6 +46,7 @@ networkmanager-openvpn
 go
 # Dev
 git
+git-lfs
 npm
 docker
 docker-compose
@@ -57,6 +58,7 @@ glslang
 zip
 vulkan-swrast
 vulkan-validation-layers
+renderdoc
 # Custom package deps
 ntfs-3g
 asciidoc

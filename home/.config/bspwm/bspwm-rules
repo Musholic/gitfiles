@@ -53,6 +53,7 @@ state='' \
 sticky='' \
 urgent=
 
+eval $misc
 
 spotify() {
     desktop=9
@@ -90,7 +91,9 @@ gimp() {
 }
 
 plaxel() {
-    state=floating
+    if [ -z "$node" ]; then
+       state=floating
+    fi
 }
 
 pavucontrol() {

@@ -2,6 +2,7 @@
 
 if ! pgrep "polybar" > /dev/null 2>&1 ; then
     polybar bsp &
+    polybar stream &
     sleep 0.2
 fi
 
@@ -13,10 +14,10 @@ bspc desktop 2 -l monocle
 
 bspc config border_width         2
 bspc config window_gap          5
-bspc config bottom_padding          -5
+bspc config bottom_padding          43
 bspc config left_padding          -5
 bspc config right_padding          -5
-bspc config top_padding          30
+bspc config top_padding          22
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
