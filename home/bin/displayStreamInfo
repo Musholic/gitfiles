@@ -1,0 +1,73 @@
+#!/bin/sh
+
+mkdir -p /tmp/displayStreamInfo
+jsonFile=/tmp/displayStreamInfo/taigaUS.json
+pgrep -f clion-nova > /dev/null
+isPlaxel=$(( $? == 0 ))
+if [ $isPlaxel -eq 1 ]; then
+    # Plaxel project
+    projectId=1176066
+    inprogressStatus=7081494
+    inprogressStatusTask=5873304
+else
+    # SMD project
+    projectId=851413
+    inprogressStatus=5127789
+    inprogressStatusTask=4251918
+fi
+curl "https://api.taiga.io/api/v1/userstories?project=$projectId&status=$inprogressStatus&include_tasks=true" | jq '.[0]' > $jsonFile
+subject=$(cat $jsonFile | jq -r '.subject')
+ref=$(cat $jsonFile | jq -r '.ref')
+task=$(cat $jsonFile | jq -r ".tasks[] | select(.status_id == $inprogressStatusTask) | .subject")
+taskIndex=$(cat $jsonFile | jq -r "[.tasks[] | .status_id == $inprogressStatusTask] | index(true)")
+taskCount=$(cat $jsonFile | jq -r ".tasks | length")
+
+if [ $isPlaxel -eq 1 ]; then
+    cd /mnt/disk/user/git/plaxelss
+    testName=$(cat .idea/workspace.xml | xq -r '.project.component[] | select(."@name" == "RunManager") | ."@selected"' | sed 's/Google Test\.//' | sed 's/\./ > /1')
+    testName1=$(echo "$testName" | cut -d'>' -f1)
+    if [[ "$testName" == *" > "* ]]; then
+        testName2="=> $(echo "$testName" | cut -d'>' -f2)"
+    fi
+else
+    cd /mnt/disk/user/git/storemydocs
+    testName=$(cat .idea/workspace.xml | xq -r '.project.component[] | select(."@name" == "RunManager") | ."@selected"' | sed 's/Karma\.//' | sed 's/\./() > /2')
+    testName1=$(echo "$testName" | cut -d'>' -f1)
+    if [[ "$testName" == *" > "* ]]; then
+        testName2="=> $(echo "$testName" | cut -d'>' -f2)"
+    fi
+fi
+appVersion=$(git describe --tags)
+
+update_svg() {
+    echo "Updating svg info"
+    cp stream_info.svg .stream_info_gen.svg
+    sed -i "s|%US_NUMBER%|$ref|" .stream_info_gen.svg
+    sed -i "s|%US_TITLE%|$subject|" .stream_info_gen.svg
+    sed -i "s|%US_TASK%|$task|" .stream_info_gen.svg
+    sed -i "s|%TDD_TEST%|$testName1|" .stream_info_gen.svg
+    sed -i "s|%TDD_TEST2%|$testName2|" .stream_info_gen.svg
+    sed -i "s|%APP_VERSION%|$appVersion|" .stream_info_gen.svg
+    sed -i "s|%INDEX_TASK%|$(($taskIndex+1))|" .stream_info_gen.svg
+    sed -i "s|%TOTAL_TASK%|$taskCount|" .stream_info_gen.svg
+    if [ $isPlaxel -eq 0 ]; then
+        sed -i ":a;N;\$!ba;s|style=\"display:none\"||1" .stream_info_gen.svg
+    else
+        sed -i ":a;N;\$!ba;s|style=\"display:none\"||2" .stream_info_gen.svg
+    fi
+}
+
+bspc node 'any.leaf.!window' -k
+
+cd /mnt/disk/user/images/
+
+update_svg
+
+if ! pgrep -f "feh .stream_info_gen.svg" &> /dev/null; then
+    echo "Starting feh"
+    bspc rule --add feh -o border=off state=floating sticky=true rectangle="2560x128+0+1312"
+
+    bspc config bottom_padding 126
+    feh .stream_info_gen.svg
+    bspc config bottom_padding -2
+fi

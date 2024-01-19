@@ -50,6 +50,9 @@ git-lfs
 npm
 docker
 docker-compose
+jq
+yq
+inotify-tools
 ## 3D vulkan dev
 mesa-utils
 vulkan-headers

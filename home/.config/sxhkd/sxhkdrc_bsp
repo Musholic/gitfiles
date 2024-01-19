@@ -29,11 +29,11 @@ super + g
 # state/flags
 #
 
-# set the window state
+# set the window state (tiled, pseudo_tiled, floating, fullscreen)
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,\~fullscreen}
 
-# set the node flags
+# set the node flags (marked, locked, sticky, private)
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
@@ -50,13 +50,13 @@ super + {_,shift + }{Left,Down,Up,Right}
 super + shift + ctrl + {Left,Down,Up,Right}
 	bspc desktop -m {west,south,north,east}
 
-# focus the node for the given path jump
+# focus the node for the given path jump (parent, brother, first, second)
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local.leaf
+	bspc node -f {next,prev}.local.leaf.\!floating
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}

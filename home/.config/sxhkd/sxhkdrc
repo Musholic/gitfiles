@@ -47,3 +47,7 @@ super + Escape
 # Open sxhkd help
 super + comma
 	~/bin/sxhkd-help
+# Display stream info
+super + d
+    displayStreamInfo
+

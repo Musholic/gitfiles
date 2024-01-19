@@ -1,0 +1,53 @@
+#!/bin/sh
+cd /mnt/disk/user/git/plaxelss/
+dir="build/debug"
+filename="plaxel"
+test_filename="plaxel_test"
+file="$dir/$filename"
+test_file="$dir/$test_filename"
+
+top=26
+size=$(( (1440-128-$top) / 2 - 2))
+bspc config left_padding $size
+
+stop() {
+    killall plaxel
+    killall plaxel_test
+    bspc config left_padding -2
+    bspc rule -r Plaxel
+}
+
+trap stop EXIT
+
+start() {
+    killall plaxel
+
+    bspc rule --add Plaxel -o sticky=true state=floating rectangle="${size}x${size}+0+$top"
+    TARGET_FPS=15 $file&
+    sleep 0.1
+}
+
+startTest() {
+    killall plaxel_test
+
+    bspc rule --add Plaxel -o sticky=true state=floating rectangle="${size}x${size}+0+$(($top + $size))"
+    test=$(cat .idea/workspace.xml | xq -r '.project.component[] | select(."@name" == "RunManager") | ."@selected"' | sed 's/Google Test\.//')
+    echo "Running test $test"
+    TARGET_FPS=15 SHOW_WINDOW=1 $test_file --gtest_filter="$test" &
+    sleep 0.1
+}
+
+start
+startTest
+
+inotifywait -e close_write,moved_to -m "$dir" |
+while read -r directory events evFilename; do
+  if [ "$evFilename" = "$filename" ]; then
+          echo "$filename has changed: $events"
+          start
+  fi
+  if [ "$evFilename" = "$test_filename" ]; then
+          echo "$test_filename has changed: $events"
+          startTest
+  fi
+done

@@ -20,8 +20,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/archlinux
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/docker-compose
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/git-extras
@@ -170,4 +168,6 @@ BASE16_SHELL="$HOME/git/sys/base16-shell/"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+if which ng &> /dev/null; then
+    source <(ng completion script)
+fi
