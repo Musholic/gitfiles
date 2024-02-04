@@ -50,6 +50,7 @@ git-lfs
 npm
 docker
 docker-compose
+docker-buildx
 jq
 yq
 inotify-tools
@@ -62,6 +63,7 @@ zip
 vulkan-swrast
 vulkan-validation-layers
 renderdoc
+directx-shader-compiler
 # Custom package deps
 ntfs-3g
 asciidoc
